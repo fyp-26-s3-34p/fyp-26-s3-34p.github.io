@@ -228,6 +228,11 @@
       gap: clamp(52px, 8vw, 110px);
     }
 
+    .hero-grid > div:first-child {
+      position: relative;
+      z-index: 1;
+    }
+
     .eyebrow {
       display: inline-flex;
       align-items: center;
@@ -266,7 +271,7 @@
 
     h1 span {
       display: block;
-      color: var(--coral);
+      color: var(--green);
       font-family: Georgia, "Times New Roman", serif;
       font-style: italic;
       font-weight: 500;
@@ -467,7 +472,7 @@
 
     .section-tag {
       margin-bottom: 12px;
-      color: var(--coral);
+      color: var(--green);
       font-size: 0.77rem;
       font-weight: 900;
       letter-spacing: 0.13em;
@@ -545,7 +550,7 @@
     }
 
     .feature-number {
-      color: var(--coral);
+      color: var(--green);
       font-family: Georgia, "Times New Roman", serif;
       font-size: 1.5rem;
       font-style: italic;
@@ -559,6 +564,13 @@
     }
 
     .feature p { margin-bottom: 0; color: var(--muted); }
+
+    .medical-note {
+      max-width: 760px;
+      margin: 32px auto 0;
+      color: var(--muted);
+      text-align: center;
+    }
 
     .privacy-wrap {
       display: grid;
@@ -630,7 +642,10 @@
       font-weight: 900;
     }
 
-    .team-section { padding-top: 20px; }
+    .team-section {
+      padding-top: 20px;
+      scroll-margin-top: 90px;
+    }
 
     .team-card {
       position: relative;
@@ -656,8 +671,14 @@
       border-radius: 50%;
     }
 
+    .team-card > div:first-child {
+      position: relative;
+      z-index: 1;
+    }
+
     .team-card h2 { max-width: 760px; margin-bottom: 18px; color: inherit; }
     .team-card p { max-width: 650px; margin-bottom: 0; font-size: 1.08rem; }
+    .team-card .section-tag { color: #2b1712; }
 
     .team-count {
       position: relative;
@@ -690,7 +711,7 @@
 
     .footer-note { margin: 0; color: var(--muted); font-size: 0.9rem; }
 
-    :focus-visible { outline: 3px solid var(--coral); outline-offset: 4px; }
+    :focus-visible { outline: 3px solid var(--green-dark); outline-offset: 4px; }
 
     @media (max-width: 860px) {
       .hero { padding-top: 72px; }
@@ -774,7 +795,7 @@
           </div>
         </div>
 
-        <div class="hero-art" aria-label="Illustration of a daily calorie diary">
+        <div class="hero-art">
           <div class="float-card float-one"><strong>Hawker-first</strong>Familiar local food</div>
           <div class="phone" aria-hidden="true">
             <div class="phone-top"></div>
@@ -831,15 +852,16 @@
         <div class="features-grid">
           <article class="feature"><span class="feature-number">01</span><div><h3>Set a calorie goal</h3><p>Get a suggested daily target from a few details, then adjust it to suit you.</p></div></article>
           <article class="feature"><span class="feature-number">02</span><div><h3>See your diary and reports</h3><p>Track meals through the day and look back at calorie patterns across the month.</p></div></article>
-          <article class="feature"><span class="feature-number">03</span><div><h3>Find meals that fit today</h3><p>Get meal suggestions based on the calories you have left and your food preferences.</p></div></article>
-          <article class="feature"><span class="feature-number">04</span><div><h3>Explore more recipe ideas</h3><p>Browse online recipe suggestions when you want something beyond the local food list.</p></div></article>
-          <article class="feature"><span class="feature-number">05</span><div><h3>Save your own recipes</h3><p>Keep homemade favourites with their ingredients, servings and nutrition in one place.</p></div></article>
+          <article class="feature"><span class="feature-number">03</span><div><h3>Find meals that fit today</h3><p>Filter suggestions by your diet choice and allergies, and always check the food label.</p></div></article>
+          <article class="feature"><span class="feature-number">04</span><div><h3>Open a suggested meal's recipe</h3><p>When a meal appears in Suggestions, open its recipe from an online recipe service.</p></div></article>
+          <article class="feature"><span class="feature-number">05</span><div><h3>Save your own recipes</h3><p>Keep homemade favourites with their ingredients, servings and calories per serving in one place.</p></div></article>
           <article class="feature"><span class="feature-number">06</span><div><h3>Log any meal</h3><p>Add hawker dishes, your recipes or a calorie amount you already know.</p></div></article>
-          <article class="feature"><span class="feature-number">07</span><div><h3>Spot weekly nutrient gaps</h3><p>Get a plain-language note about nutrients that may have been missing from the week.</p></div></article>
+          <article class="feature"><span class="feature-number">07</span><div><h3>See one weekly nutrient tip</h3><p>After at least four completed days in the past week, see the nutrient you fell furthest short of and one food tip.</p></div></article>
           <article class="feature"><span class="feature-number">08</span><div><h3>Stay in control of your data</h3><p>Protect your account, download your information or delete everything inside the app.</p></div></article>
           <article class="feature"><span class="feature-number">09</span><div><h3>Watch sugar, salt and fat</h3><p>Set daily limits and see a warning before a meal takes the day over one of them.</p></div></article>
-          <article class="feature"><span class="feature-number">10</span><div><h3>Keep an eye on food spending</h3><p>Set a daily food budget and find suggestions that fit both calories and money left.</p></div></article>
+          <article class="feature"><span class="feature-number">10</span><div><h3>Keep an eye on food spending</h3><p>Set a daily food budget and compare suggestions using estimated prices; meals without one show “No price”.</p></div></article>
         </div>
+        <p class="medical-note">Calorie targets, health limits and nutrient notes are guidance only, not medical advice or a diagnosis.</p>
       </div>
     </section>
 
@@ -855,9 +877,9 @@
         <div>
           <p class="section-tag">Privacy, made plain</p>
           <h2>Your food story stays yours.</h2>
-          <p class="section-lead">NutriKaki asks only for what it needs to create and protect your account.</p>
+          <p class="section-lead">Sign-up asks only for an email and password. NutriKaki does not keep your name.</p>
           <ul class="privacy-list">
-            <li><span class="check" aria-hidden="true">✓</span><span><strong>Email and password only.</strong> Sign-up does not ask for your name.</span></li>
+            <li><span class="check" aria-hidden="true">✓</span><span><strong>Details that make it useful.</strong> The app asks for body details to suggest a calorie goal, then keeps them in your account with your food diary and any settings you choose.</span></li>
             <li><span class="check" aria-hidden="true">✓</span><span><strong>Download your data.</strong> Take a copy from inside the app whenever you want.</span></li>
             <li><span class="check" aria-hidden="true">✓</span><span><strong>Delete from the app.</strong> Remove your account and its data without sending an email.</span></li>
           </ul>
@@ -873,7 +895,7 @@
             <h2>Built in Singapore by FYP-26-S3-34P.</h2>
             <p>We are a five-person student team bringing together software development, food context and thoughtful product design to make everyday tracking feel more local.</p>
           </div>
-          <div class="team-count" aria-label="Five team members"><strong>5</strong><span>people, one kaki</span></div>
+          <div class="team-count"><strong>5</strong><span>people, one kaki</span></div>
         </div>
       </div>
     </section>
