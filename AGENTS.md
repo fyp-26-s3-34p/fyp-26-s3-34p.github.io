@@ -1,6 +1,6 @@
 # Rules for editing this site
 
-This repo is the NutriKaki website. GitHub Pages publishes it at https://fyp-26-s3-34p.github.io/.
+This repo is the MealKaki website. GitHub Pages publishes it at https://mealkaki.site.
 
 ## This repo is public
 
